@@ -8,11 +8,11 @@ import { useState } from 'react';
 export default function AuthenticatedLayout({ header, children }) {
     const user = usePage().props.auth.user;
     const navigation = [
-        { name: 'Dashboard', href: route('dashboard') },
-        { name: 'Candidates', href: route('candidates.index') },
-        { name: 'Jobs', href: route('jobs.index') },
-        { name: 'Scheduling', href: route('scheduling.index') },
-        { name: 'Analytics', href: route('analytics.index') },
+        { label: 'Dashboard', href: route('dashboard'), active: 'dashboard' },
+        { label: 'Candidates', href: route('candidates.index'), active: 'candidates.*' },
+        { label: 'Jobs', href: route('jobs.index'), active: 'jobs.*' },
+        { label: 'Scheduling', href: route('scheduling.index'), active: 'scheduling.index' },
+        { label: 'Analytics', href: route('analytics.index'), active: 'analytics' },
     ];
 
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
@@ -38,12 +38,12 @@ export default function AuthenticatedLayout({ header, children }) {
                         <div className="hidden items-center gap-2 lg:flex">
                             {navigation.map((item) => (
                                 <NavLink
-                                    key={item.name}
+                                    key={item.label}
                                     href={item.href}
-                                    active={route().current(item.href)}
+                                    active={route().current(item.active)}
                                     className="rounded-full px-4 py-2 text-sm font-medium text-slate-300 transition hover:text-white"
                                 >
-                                    {item.name}
+                                    {item.label}
                                 </NavLink>
                             ))}
                         </div>
@@ -145,11 +145,11 @@ export default function AuthenticatedLayout({ header, children }) {
                     <div className="recruit-shell space-y-1 pb-3 pt-2">
                         {navigation.map((item) => (
                             <ResponsiveNavLink
-                                key={item.name}
+                                key={item.label}
                                 href={item.href}
-                                active={route().current(item.href)}
+                                active={route().current(item.active)}
                             >
-                                {item.name}
+                                {item.label}
                             </ResponsiveNavLink>
                         ))}
                     </div>
