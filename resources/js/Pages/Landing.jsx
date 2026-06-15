@@ -63,12 +63,24 @@ export default function Landing({ auth, canLogin, canRegister }) {
                             </Link>
 
                             <div className="flex items-center gap-3">
-                                <a href="#platform" className="hidden rounded-full px-4 py-2 text-sm text-slate-300 transition hover:text-white md:inline-flex">
+                                <Link href={route('products.index')} className="hidden rounded-full px-4 py-2 text-sm text-slate-300 transition hover:text-white md:inline-flex">
+                                    Products
+                                </Link>
+                                <Link href={route('platform.index')} className="hidden rounded-full px-4 py-2 text-sm text-slate-300 transition hover:text-white md:inline-flex">
                                     Platform
-                                </a>
-                                <a href="#operations" className="hidden rounded-full px-4 py-2 text-sm text-slate-300 transition hover:text-white md:inline-flex">
-                                    Operations
-                                </a>
+                                </Link>
+                                <Link href={route('resources.index')} className="hidden rounded-full px-4 py-2 text-sm text-slate-300 transition hover:text-white md:inline-flex">
+                                    Resources
+                                </Link>
+                                <Link href={route('pricing.index')} className="hidden rounded-full px-4 py-2 text-sm text-slate-300 transition hover:text-white md:inline-flex">
+                                    Pricing
+                                </Link>
+                                <Link href={route('hiring.index')} className="hidden rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-100 transition hover:bg-white/10 md:inline-flex">
+                                    We&apos;re Hiring
+                                </Link>
+                                <Link href={route('contact.index')} className="hidden rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-slate-100 md:inline-flex">
+                                    Get in touch
+                                </Link>
                                 {auth.user ? (
                                     <Link href={route('dashboard')} className="rounded-full bg-sky-400 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-sky-300">
                                         Open app

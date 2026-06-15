@@ -16,7 +16,31 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+})->name('landing');
+
+Route::get('/products', function () {
+    return Inertia::render('Products');
+})->name('products.index');
+
+Route::get('/platform', function () {
+    return Inertia::render('Platform');
+})->name('platform.index');
+
+Route::get('/resources', function () {
+    return Inertia::render('Resources');
+})->name('resources.index');
+
+Route::get('/pricing', function () {
+    return Inertia::render('Pricing');
+})->name('pricing.index');
+
+Route::get('/we-are-hiring', function () {
+    return Inertia::render('Hiring');
+})->name('hiring.index');
+
+Route::get('/get-in-touch', function () {
+    return Inertia::render('Contact');
+})->name('contact.index');
 
 Route::get('/dashboard', function () {
     return Inertia::render('RecruitDashboard');
