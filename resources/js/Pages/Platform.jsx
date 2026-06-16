@@ -15,20 +15,20 @@ export default function Platform() {
 
             <section className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
                 <div className="space-y-6">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-orange-400/20 bg-orange-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-orange-200">
+                    <div className="inline-flex items-center gap-2 rounded-full border border-orange-400/20 bg-orange-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.35em] text-orange-600">
                         Platform
                     </div>
-                    <h1 className="max-w-3xl text-5xl font-black leading-[0.95] tracking-tight text-white lg:text-7xl">
+                    <h1 className="max-w-3xl text-5xl font-black leading-[0.95] tracking-tight text-slate-900 lg:text-7xl">
                         A recruiting platform that keeps the whole workflow in sync.
                     </h1>
-                    <p className="max-w-2xl text-lg leading-8 text-slate-300 lg:text-xl">
+                    <p className="max-w-2xl text-lg leading-8 text-slate-700 lg:text-xl">
                         From role creation to offer approval, the platform is designed to replace fragmented ATS, calendar, and reporting tools.
                     </p>
                     <div className="flex flex-wrap gap-3">
-                        <Link href={route('products.index')} className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100">
+                        <Link href={route('products.index')} className="rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-sky-600">
                             Explore products
                         </Link>
-                        <Link href={route('contact.index')} className="rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                        <Link href={route('contact.index')} className="rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-50">
                             Talk to us
                         </Link>
                     </div>
@@ -42,9 +42,9 @@ export default function Platform() {
                             ['Analytics', 'Conversion, source quality, and throughput'],
                             ['Security', 'Role-based access and clean audit paths'],
                         ].map(([title, text]) => (
-                            <div key={title} className="rounded-3xl border border-white/5 bg-slate-950/60 p-5">
-                                <div className="text-sm font-semibold text-sky-300">{title}</div>
-                                <p className="mt-3 text-sm leading-7 text-slate-400">{text}</p>
+                            <div key={title} className="rounded-3xl border border-slate-200 bg-slate-50 p-5">
+                                <div className="text-sm font-semibold text-sky-500">{title}</div>
+                                <p className="mt-3 text-sm leading-7 text-slate-600">{text}</p>
                             </div>
                         ))}
                     </div>
@@ -55,8 +55,8 @@ export default function Platform() {
                 {pillars.map(([title, text]) => (
                     <article key={title} className="surface-panel p-5">
                         <div className="h-1.5 w-20 rounded-full bg-gradient-to-r from-emerald-400 to-cyan-300" />
-                        <h3 className="mt-5 text-xl font-bold text-white">{title}</h3>
-                        <p className="mt-3 text-sm leading-7 text-slate-400">{text}</p>
+                        <h3 className="mt-5 text-xl font-bold text-slate-900">{title}</h3>
+                        <p className="mt-3 text-sm leading-7 text-slate-600">{text}</p>
                     </article>
                 ))}
             </section>

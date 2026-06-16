@@ -8,17 +8,17 @@
 	}
 
 	body {
-		@apply bg-slate-950 text-slate-100 antialiased;
+		@apply bg-white text-slate-900 antialiased;
 		font-family: 'Aptos', 'Segoe UI', sans-serif;
 		background-image:
-			radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 32%),
-			radial-gradient(circle at top right, rgba(249, 115, 22, 0.16), transparent 28%),
-			linear-gradient(180deg, #020617 0%, #0f172a 100%);
+			radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 32%),
+			radial-gradient(circle at top right, rgba(249, 115, 22, 0.08), transparent 28%),
+			linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
 	}
 
 	::selection {
-		background: rgba(56, 189, 248, 0.28);
-		color: #f8fafc;
+		background: rgba(56, 189, 248, 0.2);
+		color: #1e293b;
 	}
 }
 
@@ -28,10 +28,10 @@
 	}
 
 	.glass-panel {
-		@apply rounded-[28px] border border-white/10 bg-white/5 shadow-2xl shadow-slate-950/40 backdrop-blur-xl;
+		@apply rounded-[28px] border border-slate-200 bg-slate-50 shadow-2xl shadow-slate-900/5 backdrop-blur-xl;
 	}
 
 	.surface-panel {
-		@apply rounded-[24px] border border-white/10 bg-slate-900/70 shadow-xl shadow-slate-950/30;
+		@apply rounded-[24px] border border-slate-200 bg-slate-100 shadow-xl shadow-slate-900/5;
 	}
 }
