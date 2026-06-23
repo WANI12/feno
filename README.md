@@ -47,7 +47,4 @@ npm run build
 - `/scheduling` interview coordination
 - `/analytics` reporting
 
-## Notes
-
-- The app currently uses seeded demo content in the UI to present the product experience.
-- Vite emits a Node engine warning on this machine because the installed Node version is older than the version requested by Vite 7, but the production build still completes successfully.
+ 
