@@ -237,7 +237,7 @@ export default function Landing({ auth, canLogin, canRegister }) {
                                 <div className="mt-3 space-y-4">
                                     <div>
                                         <div className="flex items-center justify-between text-sm text-slate-600">
-                                            <span>Top source quality</span>
+                                            <span className="text-slate-700">Top source quality</span>
                                             <span>84%</span>
                                         </div>
                                         <div className="mt-2 h-2 rounded-full bg-slate-200">
@@ -246,7 +246,7 @@ export default function Landing({ auth, canLogin, canRegister }) {
                                     </div>
                                     <div>
                                         <div className="flex items-center justify-between text-sm text-slate-600">
-                                            <span>Hiring manager response</span>
+                                            <span className="text-slate-700">Hiring manager response</span>
                                             <span>96%</span>
                                         </div>
                                         <div className="mt-2 h-2 rounded-full bg-slate-200">
@@ -255,7 +255,7 @@ export default function Landing({ auth, canLogin, canRegister }) {
                                     </div>
                                     <div>
                                         <div className="flex items-center justify-between text-sm text-slate-600">
-                                            <span>Offer acceptance</span>
+                                            <span className="text-slate-700">Offer acceptance</span>
                                             <span>71%</span>
                                         </div>
                                         <div className="mt-2 h-2 rounded-full bg-slate-200">

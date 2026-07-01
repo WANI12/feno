@@ -7,6 +7,14 @@
 		scroll-behavior: smooth;
 	}
 
+	html[data-theme='dark'] {
+		color-scheme: dark;
+	}
+
+	html[data-theme='light'] {
+		color-scheme: light;
+	}
+
 	body {
 		@apply bg-white text-slate-900 antialiased;
 		font-family: 'Aptos', 'Segoe UI', sans-serif;
@@ -14,6 +22,15 @@
 			radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 32%),
 			radial-gradient(circle at top right, rgba(249, 115, 22, 0.08), transparent 28%),
 			linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+		transition: background-color 0.2s ease, color 0.2s ease;
+	}
+
+	html[data-theme='dark'] body {
+		@apply bg-slate-950 text-slate-100;
+		background-image:
+			radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 32%),
+			radial-gradient(circle at top right, rgba(249, 115, 22, 0.14), transparent 28%),
+			linear-gradient(180deg, #020617 0%, #0f172a 100%);
 	}
 
 	::selection {
@@ -28,10 +45,18 @@
 	}
 
 	.glass-panel {
-		@apply rounded-[28px] border border-slate-200 bg-slate-50 shadow-2xl shadow-slate-900/5 backdrop-blur-xl;
+		@apply rounded-[28px] border border-slate-200 bg-white/90 shadow-2xl shadow-slate-900/5 backdrop-blur-xl;
 	}
 
 	.surface-panel {
-		@apply rounded-[24px] border border-slate-200 bg-slate-100 shadow-xl shadow-slate-900/5;
+		@apply rounded-[24px] border border-slate-200 bg-slate-50 shadow-xl shadow-slate-900/5;
+	}
+
+	html[data-theme='dark'] .glass-panel {
+		@apply border-slate-700 bg-slate-900/80 shadow-slate-950/30;
+	}
+
+	html[data-theme='dark'] .surface-panel {
+		@apply border-slate-700 bg-slate-800/80 shadow-slate-950/30;
 	}
 }
