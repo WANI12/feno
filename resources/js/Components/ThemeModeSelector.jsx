@@ -23,9 +23,11 @@ export default function ThemeModeSelector({ className = '' }) {
         <button
             type="button"
             onClick={toggleTheme}
-            className={`rounded-full border border-slate-300 bg-white/90 px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-slate-400 hover:text-slate-900 ${className}`}
+            aria-label="Toggle color theme"
+            className={`fixed bottom-4 right-4 z-50 inline-flex items-center gap-2 rounded-full border border-slate-300/80 bg-white/95 px-4 py-2.5 text-sm font-semibold text-slate-700 shadow-lg shadow-slate-900/10 backdrop-blur transition hover:-translate-y-0.5 hover:border-slate-400 hover:text-slate-900 ${className}`}
         >
-            {mode === 'dark' ? '☀️ Light' : '🌙 Dark'}
+            <span className="text-base">{mode === 'dark' ? '☀️' : '🌙'}</span>
+            <span>{mode === 'dark' ? 'Light' : 'Dark'}</span>
         </button>
     );
 }

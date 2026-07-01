@@ -20,8 +20,8 @@ export default function AuthenticatedLayout({ header, children }) {
         useState(false);
 
     return (
-        <div className="min-h-screen bg-white text-slate-900">
-            <nav className="sticky top-0 z-40 border-b border-slate-200 bg-white/80 backdrop-blur-xl">
+        <div className="min-h-screen bg-[color:var(--app-bg)] text-[color:var(--text-primary)]">
+            <nav className="sticky top-0 z-40 border-b border-[color:var(--border)] bg-[color:var(--surface)]/80 backdrop-blur-xl">
                 <div className="recruit-shell">
                     <div className="flex h-20 items-center justify-between gap-4">
                         <Link href="/" className="flex items-center gap-3">
@@ -182,7 +182,7 @@ export default function AuthenticatedLayout({ header, children }) {
             </nav>
 
             {header && (
-                <header className="border-b border-slate-200 bg-slate-50/80 backdrop-blur">
+                <header className="border-b border-[color:var(--border)] bg-[color:var(--surface-muted)]/80 backdrop-blur">
                     <div className="recruit-shell py-6">
                         {header}
                     </div>
@@ -190,6 +190,8 @@ export default function AuthenticatedLayout({ header, children }) {
             )}
 
             <main>{children}</main>
+
+            <ThemeModeSelector />
         </div>
     );
 }

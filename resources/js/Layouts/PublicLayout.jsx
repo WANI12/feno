@@ -30,7 +30,6 @@ export default function PublicLayout({ children }) {
                         </Link>
 
                         <div className="flex flex-wrap items-center gap-2 lg:justify-end">
-                            <ThemeModeSelector className="hidden md:inline-flex" />
                             {navItems.map((item) => (
                                 <Link key={item.label} href={item.href} className="rounded-full px-4 py-2 text-sm text-slate-700 transition hover:text-slate-900">
                                     {item.label}
@@ -62,6 +61,8 @@ export default function PublicLayout({ children }) {
 
                 <main className="recruit-shell pb-16 pt-10 lg:pt-14">{children}</main>
             </div>
+
+            <ThemeModeSelector />
         </div>
     );
 }

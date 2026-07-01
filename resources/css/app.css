@@ -3,12 +3,33 @@
 @tailwind utilities;
 
 @layer base {
+	:root {
+		--app-bg: #ffffff;
+		--app-bg-alt: #f8fafc;
+		--surface: rgba(255, 255, 255, 0.9);
+		--surface-muted: #f8fafc;
+		--surface-strong: #ffffff;
+		--border: #e2e8f0;
+		--text-primary: #0f172a;
+		--text-secondary: #475569;
+		--text-muted: #64748b;
+	}
+
 	html {
 		scroll-behavior: smooth;
 	}
 
 	html[data-theme='dark'] {
 		color-scheme: dark;
+		--app-bg: #020617;
+		--app-bg-alt: #0f172a;
+		--surface: rgba(15, 23, 42, 0.9);
+		--surface-muted: #111827;
+		--surface-strong: #0f172a;
+		--border: #334155;
+		--text-primary: #f8fafc;
+		--text-secondary: #cbd5e1;
+		--text-muted: #94a3b8;
 	}
 
 	html[data-theme='light'] {
@@ -16,26 +37,94 @@
 	}
 
 	body {
-		@apply bg-white text-slate-900 antialiased;
+		@apply antialiased;
 		font-family: 'Aptos', 'Segoe UI', sans-serif;
+		background-color: var(--app-bg);
+		color: var(--text-primary);
 		background-image:
 			radial-gradient(circle at top left, rgba(56, 189, 248, 0.08), transparent 32%),
 			radial-gradient(circle at top right, rgba(249, 115, 22, 0.08), transparent 28%),
-			linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+			linear-gradient(180deg, var(--app-bg) 0%, var(--app-bg-alt) 100%);
 		transition: background-color 0.2s ease, color 0.2s ease;
-	}
-
-	html[data-theme='dark'] body {
-		@apply bg-slate-950 text-slate-100;
-		background-image:
-			radial-gradient(circle at top left, rgba(56, 189, 248, 0.14), transparent 32%),
-			radial-gradient(circle at top right, rgba(249, 115, 22, 0.14), transparent 28%),
-			linear-gradient(180deg, #020617 0%, #0f172a 100%);
 	}
 
 	::selection {
 		background: rgba(56, 189, 248, 0.2);
-		color: #1e293b;
+		color: var(--text-primary);
+	}
+}
+
+@layer components {
+	.recruit-shell {
+		@apply mx-auto w-full max-w-7xl px-6 lg:px-8;
+	}
+
+	.glass-panel {
+		@apply rounded-[28px] border border-slate-200 bg-white/90 shadow-2xl shadow-slate-900/5 backdrop-blur-xl;
+	}
+
+	.surface-panel {
+		@apply rounded-[24px] border border-slate-200 bg-slate-50 shadow-xl shadow-slate-900/5;
+	}
+
+	html[data-theme='dark'] .glass-panel {
+		@apply border-slate-700 bg-slate-900/80 shadow-slate-950/30;
+	}
+
+	html[data-theme='dark'] .surface-panel {
+		@apply border-slate-700 bg-slate-800/80 shadow-slate-950/30;
+	}
+
+	html[data-theme='dark'] .bg-white {
+		background-color: var(--surface-strong) !important;
+	}
+
+	html[data-theme='dark'] .bg-slate-50 {
+		background-color: var(--surface-muted) !important;
+	}
+
+	html[data-theme='dark'] .bg-slate-100 {
+		background-color: #1e293b !important;
+	}
+
+	html[data-theme='dark'] .border-slate-200 {
+		border-color: var(--border) !important;
+	}
+
+	html[data-theme='dark'] .border-slate-300 {
+		border-color: var(--border) !important;
+	}
+
+	html[data-theme='dark'] .text-slate-900,
+	html[data-theme='dark'] .text-gray-900,
+	html[data-theme='dark'] .text-gray-800 {
+		color: var(--text-primary) !important;
+	}
+
+	html[data-theme='dark'] .text-slate-700,
+	html[data-theme='dark'] .text-slate-600,
+	html[data-theme='dark'] .text-gray-700,
+	html[data-theme='dark'] .text-gray-600,
+	html[data-theme='dark'] .text-gray-500 {
+		color: var(--text-secondary) !important;
+	}
+
+	html[data-theme='dark'] .text-slate-500,
+	html[data-theme='dark'] .text-slate-400 {
+		color: var(--text-muted) !important;
+	}
+
+	html[data-theme='dark'] .text-sky-500,
+	html[data-theme='dark'] .text-sky-600 {
+		color: #38bdf8 !important;
+	}
+
+	html[data-theme='dark'] .text-orange-600 {
+		color: #fb923c !important;
+	}
+
+	html[data-theme='dark'] .text-emerald-600 {
+		color: #34d399 !important;
 	}
 }
 
